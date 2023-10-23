@@ -1,0 +1,20 @@
+main_metric : 'T1_A'
+
+eval:
+  freq : 5
+  data :
+    name : 'EPIC-KITCHENS-55'
+    split : 'valid'
+
+    feat_file : '/data1/qzhb/datasets/EPIC55/rgb'
+    feature : 'TSN'
+    feature_fps : 30
+    feature_dim : 1024
+
+    forward_frame : 8
+    past_frame : 40
+    
+    fps : 4
+    batch_size : 128
+    num_workers : 2
+    cache : false

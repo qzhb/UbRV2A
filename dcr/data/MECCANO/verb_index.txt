@@ -1,0 +1,12 @@
+0 check
+1 browse
+2 take
+3 loosen
+4 put
+5 tighten
+6 align
+7 fit
+8 plug
+9 pull
+10 screw
+11 unscrew

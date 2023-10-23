@@ -1,0 +1,52 @@
+main_metric : 'T1_A'
+
+
+eval:
+  freq : 5
+  data :
+    name : 'EGTEA_GAZE+'
+    split : 'valid2'
+    
+    feat_file : '/data1/qzhb/datasets/EGATEGazePlus/flow_s2'  
+    feature : 'TSN'
+    feature_fps : 24
+    feature_dim : 1024
+
+    forward_frame : 8
+    past_frame : 20
+    fps : 4
+    batch_size : 512
+    num_workers : 2
+    cache : false
+
+model:
+  name : 'DCR'
+  
+  feat_dim: 1024
+  past_frame : 20
+  anticipation_frame : 4
+  action_frame : 4
+  
+  reasoner:
+    name : 'transformer'
+    d_model : 1024
+    nhead : 16
+    dff : 4096
+    depth : 6
+    dropout : 0.1
+    pe_type : 'learnable'
+
+  classifier:
+    dropout: 0.4
+    action: true
+    verb: false
+    noun : false
+
+  loss:
+    name : 'CE'
+    verb : 0.5
+    noun : 0.5
+    feat_mse : 0.1
+    next_cls : 1.
+
+    smooth: 0.4

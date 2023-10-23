@@ -1,0 +1,17 @@
+eval:
+  freq : 5
+  data :
+    name : 'EGTEA_GAZE+'
+    split : 'valid1'
+    
+    feat_file : '/data1/qzhb/datasets/EGATEGazePlus/rgb_s1'  
+    feature : 'TSN'
+    feature_fps : 24
+    feature_dim : 1024
+
+    forward_frame : 8
+    past_frame : 20
+    fps : 4
+    batch_size : 512
+    num_workers : 2
+    cache : false
